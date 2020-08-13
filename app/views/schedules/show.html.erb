@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+<h1 style="color: green;">授業の情報</h1><hr><br>
+
+
+  <ul class="list-group">
+    <li class="list-group-item">
+    		<strong>Title:</strong>
+    		<%= @schedule.title %></li>
+    <li class="list-group-item">
+    		<strong>Day:</strong>
+    		<%= @schedule.day %></li>
+    <li class="list-group-item">
+    		<strong>Lecture:</strong>
+    		<%= @schedule.lecture %></li>
+    <li class="list-group-item">
+    		  <strong>Room:</strong>
+    			<%= @schedule.room %></li>
+  </ul>
+
+
+
+
+<%= link_to '編集', edit_schedule_path(@schedule), class: 'btn btn-warning btn' %> 
+<%= link_to '戻る', schedules_path, class: 'btn btn-info' %>
+</div>

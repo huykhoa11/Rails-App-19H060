@@ -1,0 +1,53 @@
+<%= form_with(model: schedule, local: true) do |form| %>
+  <% if schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+        <% schedule.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class ="container">
+  <div class="field form-group">
+    <%= form.label :科目名 %><br>
+    <%= form.text_area :title, class: 'form-control' %>
+  </div>
+
+  <div class="field form-check">
+    <h4><%= form.label :曜日 %></h4>
+    <%= form.check_box :day, {multiple: false}, "月", nil %>月
+    <%= form.check_box :day, {multiple: false}, "火", nil %>火
+    <%= form.check_box :day, {multiple: false}, "水", nil %>水
+    <%= form.check_box :day, {multiple: false}, "木", nil %>木
+    <%= form.check_box :day, {multiple: false}, "金", nil %>金
+  </div><br>
+
+  <div class="field">
+    <h4><%= form.label :限目 %></h4>
+    <%= form.check_box :lecture, {multiple: false}, "1限", nil %>1限
+    <%= form.check_box :lecture, {multiple: false}, "2限", nil %>2限
+    <%= form.check_box :lecture, {multiple: false}, "3限", nil %>3限
+    <%= form.check_box :lecture, {multiple: false}, "4限", nil %>4限
+    <%= form.check_box :lecture, {multiple: false}, "5限", nil %>5限
+  </div><br>
+
+  <div class="field form-group">
+    <%= form.label :教室 %><br>
+    <%= form.text_field :room, class: 'form-control' %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit '作成', class: 'btn btn-warning' %>
+  </div><br>
+
+  <%= link_to '表示', @schedule, class: 'btn btn-primary' %>
+  <%= link_to '戻る', schedules_path, class: 'btn btn-info' %>
+</div>
+
+<% end %>

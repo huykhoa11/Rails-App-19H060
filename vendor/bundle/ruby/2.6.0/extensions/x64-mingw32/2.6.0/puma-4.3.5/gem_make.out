@@ -1,0 +1,24 @@
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/puma-4.3.5/ext/puma_http11
+E:/LAPTRINH/ruby/Ruby/Ruby26-x64/bin/ruby.exe -I E:/LAPTRINH/ruby/Ruby/Ruby26-x64/lib/ruby/2.6.0 -r ./siteconf20200721-13188-1cdsht7.rb extconf.rb
+checking for whether -D_FORTIFY_SOURCE=2 is accepted as CFLAGS... yes
+checking for whether -fstack-protector is accepted as LDFLAGS... yes
+checking for -lssp... yes
+checking for BIO_read() in -lcrypto... no
+checking for BIO_read() in -llibeay32... no
+creating Makefile
+
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/puma-4.3.5/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/puma-4.3.5/ext/puma_http11
+make "DESTDIR="
+generating puma_http11-x64-mingw32.def
+compiling http11_parser.c
+compiling io_buffer.c
+compiling mini_ssl.c
+compiling puma_http11.c
+linking shared-object puma/puma_http11.so
+
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/puma-4.3.5/ext/puma_http11
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20200721-13188-r9qrv8/puma

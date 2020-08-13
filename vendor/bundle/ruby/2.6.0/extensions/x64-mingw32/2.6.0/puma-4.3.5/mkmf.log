@@ -1,0 +1,188 @@
+block in append_cflags: checking for whether -D_FORTIFY_SOURCE=2 is accepted as CFLAGS... -------------------- yes
+
+"x86_64-w64-mingw32-gcc -o conftest.exe -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/x64-mingw32 -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/ruby/backward -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0 -I. -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math conftest.c  -L. -LE:/LAPTRINH/ruby/Ruby/Ruby26-x64/lib -L. -pipe -s     -lx64-msvcrt-ruby260  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return 0;
+8: }
+/* end */
+
+"x86_64-w64-mingw32-gcc -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/x64-mingw32 -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/ruby/backward -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0 -I. -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math  -D_FORTIFY_SOURCE=2 -Werror -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return 0;
+8: }
+/* end */
+
+--------------------
+
+block in append_ldflags: checking for whether -fstack-protector is accepted as LDFLAGS... -------------------- yes
+
+"x86_64-w64-mingw32-gcc -o conftest.exe -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/x64-mingw32 -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/ruby/backward -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0 -I. -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -D_FORTIFY_SOURCE=2 conftest.c  -L. -LE:/LAPTRINH/ruby/Ruby/Ruby26-x64/lib -L. -pipe -s     -lx64-msvcrt-ruby260 -fstack-protector -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return 0;
+8: }
+/* end */
+
+--------------------
+
+have_library: checking for -lssp... -------------------- yes
+
+"x86_64-w64-mingw32-gcc -o conftest.exe -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/x64-mingw32 -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/ruby/backward -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0 -I. -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -D_FORTIFY_SOURCE=2 conftest.c  -L. -LE:/LAPTRINH/ruby/Ruby/Ruby26-x64/lib -L. -pipe -s -fstack-protector     -lx64-msvcrt-ruby260 -lssp  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return 0;
+16: }
+17: 
+18: int t(void) { ; return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for BIO_read() in -lcrypto... -------------------- no
+
+"x86_64-w64-mingw32-gcc -o conftest.exe -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/x64-mingw32 -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/ruby/backward -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0 -I. -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -D_FORTIFY_SOURCE=2 conftest.c  -L. -LE:/LAPTRINH/ruby/Ruby/Ruby26-x64/lib -L. -pipe -s -fstack-protector    -lssp  -lx64-msvcrt-ruby260 -lcrypto -lssp  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:17:57: error: 'BIO_read' undeclared (first use in this function); did you mean '_read'?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+                                                         ^~~~~~~~
+                                                         _read
+conftest.c:17:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return 0;
+16: }
+17: int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+/* end */
+
+"x86_64-w64-mingw32-gcc -o conftest.exe -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/x64-mingw32 -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/ruby/backward -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0 -I. -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -D_FORTIFY_SOURCE=2 conftest.c  -L. -LE:/LAPTRINH/ruby/Ruby/Ruby26-x64/lib -L. -pipe -s -fstack-protector    -lssp  -lx64-msvcrt-ruby260 -lcrypto -lssp  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+c:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -lcrypto
+collect2.exe: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return 0;
+16: }
+17: extern void BIO_read();
+18: int t(void) { BIO_read(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for BIO_read() in -llibeay32... -------------------- no
+
+"x86_64-w64-mingw32-gcc -o conftest.exe -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/x64-mingw32 -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/ruby/backward -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0 -I. -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -D_FORTIFY_SOURCE=2 conftest.c  -L. -LE:/LAPTRINH/ruby/Ruby/Ruby26-x64/lib -L. -pipe -s -fstack-protector    -lssp  -lx64-msvcrt-ruby260 -llibeay32 -lssp  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+conftest.c: In function 't':
+conftest.c:17:57: error: 'BIO_read' undeclared (first use in this function); did you mean '_read'?
+ int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+                                                         ^~~~~~~~
+                                                         _read
+conftest.c:17:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return 0;
+16: }
+17: int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+/* end */
+
+"x86_64-w64-mingw32-gcc -o conftest.exe -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/x64-mingw32 -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0/ruby/backward -IE:/LAPTRINH/ruby/Ruby/Ruby26-x64/include/ruby-2.6.0 -I. -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -D_FORTIFY_SOURCE=2 conftest.c  -L. -LE:/LAPTRINH/ruby/Ruby/Ruby26-x64/lib -L. -pipe -s -fstack-protector    -lssp  -lx64-msvcrt-ruby260 -llibeay32 -lssp  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi  "
+c:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -llibeay32
+collect2.exe: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return 0;
+16: }
+17: extern void BIO_read();
+18: int t(void) { BIO_read(); return 0; }
+/* end */
+
+--------------------
+

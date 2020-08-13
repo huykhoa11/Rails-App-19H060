@@ -1,0 +1,16 @@
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.6/ext/bootsnap
+E:/LAPTRINH/ruby/Ruby/Ruby26-x64/bin/ruby.exe -I E:/LAPTRINH/ruby/Ruby/Ruby26-x64/lib/ruby/2.6.0 -r ./siteconf20200721-13188-19gxpgl.rb extconf.rb
+creating Makefile
+
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.6/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.6/ext/bootsnap
+make "DESTDIR="
+generating bootsnap-x64-mingw32.def
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.6/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20200721-13188-1ac0l8z/bootsnap

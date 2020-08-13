@@ -1,0 +1,16 @@
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+E:/LAPTRINH/ruby/Ruby/Ruby26-x64/bin/ruby.exe -I E:/LAPTRINH/ruby/Ruby/Ruby26-x64/lib/ruby/2.6.0 -r ./siteconf20200721-13188-8rlx3q.rb extconf.rb
+creating Makefile
+
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+generating cruby-x64-mingw32.def
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20200721-13188-10u3d8/skiptrace/internal

@@ -1,0 +1,480 @@
+<p id="notice"><%= notice %></p>
+
+  <div class="container">
+      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <%= link_to "Homepage", "/schedules", class: 'navbar-brand' %>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="form-inline">
+          <%= form_tag(schedules_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search", class: 'form-control mr-sm-2' %>
+          <%= submit_tag "Search", :title => nil %>
+          <% end %>
+        </form>
+      </div>
+      </nav>
+    </div>
+
+
+ <div class="container">
+<div class="jumbotron jumbotron-fluid">
+ 
+    <h2 style="color:white;"><strong>Bootstrapを利用し、授業スケジュールを作成した</strong></h2>
+    <p class="lead" style="color:white;">
+      授業のタイトルと教室番号を入力、 時限と曜日をチェック<br>
+      表として授業の情報を表示。
+    </p>
+    <button type="button" class="btn btn-success">19H060</button> 
+    <button type="button" class="btn btn-danger">チャン　ヒュ　コア</button>
+  </div>
+</div>
+
+
+
+<a style = "color:red; text-align: center;">
+  <strong><%= button_to '科目を追加', {controller: 'schedules', action: 'new'}, {method: :get } %></strong>
+</a><br>
+
+<div class="container">
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr style="background-color: #DFDFDF">
+      <th scope="col">限目</th>
+      <th scope="col">時間</th>
+      <th scope="col">月</th>
+      <th scope="col">火</th>
+      <th scope="col">水</th>
+      <th scope="col">木</th>
+      <th scope="col">金</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1限</th>
+      <th>9:00 ~ 10:30</th>
+      <td>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day == '月' && schedule.lecture == '1限' %>
+          <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '火' && schedule.lecture == '1限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '水' && schedule.lecture == '1限' %>
+          <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '木' && schedule.lecture == '1限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '金' && schedule.lecture == '1限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+
+
+
+
+
+    <tr>
+      <th scope="row">2限</th>
+      <th>10:40 ~ 12:10</th>
+      <td>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day == '月' && schedule.lecture == '2限' %>
+          <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '火' && schedule.lecture == '2限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '水' && schedule.lecture == '2限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '木' && schedule.lecture == '2限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '金' && schedule.lecture == '2限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+
+
+    <tr style="background-color:lightblue;">
+      <th></th>
+      <td colspan="6" style = "text-align: center;"><strong>昼休み</strong></td>
+    </tr>
+
+
+
+    <tr>
+      <th scope="row">3限</th>
+      <th>12:50 ~ 14:20</th>
+      <td>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day == '月' && schedule.lecture == '3限' %>
+          <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '火' && schedule.lecture == '3限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '水' && schedule.lecture == '3限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '木' && schedule.lecture == '3限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '金' && schedule.lecture == '3限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+
+
+
+
+    <tr>
+      <th scope="row">4限</th>
+      <th>14:30 ~ 16:00</th>
+      <td>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day == '月' && schedule.lecture == '4限' %>
+          <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '火' && schedule.lecture == '4限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '水' && schedule.lecture == '4限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '木' && schedule.lecture == '4限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '金' && schedule.lecture == '4限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+
+
+
+
+    <tr>
+      <th scope="row">5限</th>
+      <th>16:10 ~ 17:40</th>
+      <td>
+        <% @schedules.each do |schedule| %>
+          <% if schedule.day == '月' && schedule.lecture == '5限' %>
+          <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '火' && schedule.lecture == '5限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '水' && schedule.lecture == '5限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '木' && schedule.lecture == '5限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @schedules.each do |schedule| %>
+        <% if schedule.day == '金' && schedule.lecture == '5限' %>
+        <p style="background-color: #FCC9F5">
+            <%= schedule.title %><br>
+            <%= schedule.lecture %><br>
+            <%= schedule.room %><br>
+            <%= link_to '表示 ', schedule, class: 'btn btn-primary btn-sm' %>
+            <%= link_to ' 編集', edit_schedule_path(schedule), class: 'btn btn-warning btn-sm' %>
+            <%= link_to ' 削除 ', schedule, method: :delete, data: { confirm: 'Are you sure?' }, 
+                class: 'btn btn-danger btn-sm' %><br><br>
+          </p>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<a style = "color:red; text-align: center;">
+  <strong><%= button_to '科目を追加', {controller: 'schedules', action: 'new'}, {method: :get }%></strong>
+</a>
+</div>
+<br><br>
+
+

@@ -1,0 +1,20 @@
+current directory: E:/LAPTRINH/RailsApp/kadai2/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.15/ext/mri
+E:/LAPTRINH/ruby/Ruby/Ruby26-x64/bin/ruby.exe -I E:/LAPTRINH/ruby/Ruby/Ruby26-x64/lib/ruby/2.6.0 -r ./siteconf20200728-1632-1vkhm91.rb extconf.rb
+creating Makefile
+
+current directory: E:/LAPTRINH/RailsApp/kadai2/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.15/ext/mri
+make "DESTDIR=" clean
+
+current directory: E:/LAPTRINH/RailsApp/kadai2/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.15/ext/mri
+make "DESTDIR="
+generating bcrypt_ext-x64-mingw32.def
+compiling bcrypt_ext.c
+compiling crypt_blowfish.c
+x86_64-w64-mingw32-gcc  -D__SKIP_GNU -D_FORTIFY_SOURCE=2 -D__USE_MINGW_ANSI_STDIO=1 -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64   -c -o x86.o x86.S
+compiling crypt_gensalt.c
+compiling wrapper.c
+linking shared-object bcrypt_ext.so
+
+current directory: E:/LAPTRINH/RailsApp/kadai2/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.15/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20200728-1632-18hvael

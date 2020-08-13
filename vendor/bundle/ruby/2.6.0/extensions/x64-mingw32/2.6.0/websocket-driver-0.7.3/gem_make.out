@@ -1,0 +1,16 @@
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+E:/LAPTRINH/ruby/Ruby/Ruby26-x64/bin/ruby.exe -I E:/LAPTRINH/ruby/Ruby/Ruby26-x64/lib/ruby/2.6.0 -r ./siteconf20200721-13188-xvarih.rb extconf.rb
+creating Makefile
+
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR="
+generating websocket_mask-x64-mingw32.def
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: E:/LAPTRINH/RailsApp/kadai1/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20200721-13188-1mo7r72
